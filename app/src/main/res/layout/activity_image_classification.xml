@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="@dimen/toolbar_top_margin"
+            android:background="@null"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:title="@string/image_classification_title" />
+
+        <TextureView
+            android:id="@+id/image_classification_texture_view"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="280dp"
+            android:layout_height="280dp"/>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/image_classification_info_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/image_classification_ms_text"
+                style="@style/ImageClassificationFpsMsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="1dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/image_classification_texture_view"
+                app:layout_constraintRight_toRightOf="@id/image_classification_texture_view" />
+
+            <TextView
+                android:id="@+id/image_classification_fps_text"
+                style="@style/ImageClassificationFpsMsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="1dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/image_classification_texture_view"
+                app:layout_constraintRight_toLeftOf="@id/image_classification_ms_text" />
+
+            <TextView
+                android:id="@+id/image_classification_ms_avg_text"
+                style="@style/ImageClassificationFpsMsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="1dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/image_classification_texture_view"
+                app:layout_constraintRight_toLeftOf="@id/image_classification_fps_text" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/info_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/info_max_text"
+                style="@style/ImageClassificationFpsMsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="1dp"
+                android:visibility="visible"
+                app:layout_constraintRight_toRightOf="@id/info_min_text" />
+
+            <TextView
+                android:id="@+id/info_min_text"
+                style="@style/ImageClassificationFpsMsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="1dp"
+                android:visibility="visible"
+                app:layout_constraintRight_toLeftOf="@id/info_max_text" />
+
+            <TextView
+                android:id="@+id/info_text"
+                style="@style/ImageClassificationFpsMsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="1dp"
+                android:visibility="visible"
+                app:layout_constraintRight_toLeftOf="@id/info_min_text" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/criterion_cnt_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/criterion_cnt_text"
+                android:layout_width="100dp"
+                android:layout_marginRight="8dp"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintRight_toRightOf="@id/criterion_cnt_btn"
+                android:text="2000"/>
+
+            <Button
+                android:id="@+id/criterion_cnt_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintRight_toLeftOf="@id/criterion_cnt_text"
+                android:text="set"/>
+
+            <TextView
+                android:id="@+id/info_criterion_cnt"
+                style="@style/ImageClassificationFpsMsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:elevation="1dp"
+                android:visibility="visible"
+                app:layout_constraintRight_toLeftOf="@id/criterion_cnt_btn" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/criterion_num_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/criterion_num_text"
+                android:layout_width="100dp"
+                android:layout_marginRight="8dp"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintRight_toRightOf="@id/criterion_num_btn"
+                android:text="1.0"/>
+
+            <Button
+                android:id="@+id/criterion_num_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintRight_toLeftOf="@id/criterion_num_text"
+                android:text="set"/>
+
+            <TextView
+                android:id="@+id/info_criterion_num"
+                style="@style/ImageClassificationFpsMsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:elevation="1dp"
+                android:visibility="visible"
+                app:layout_constraintRight_toLeftOf="@id/criterion_num_btn" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
