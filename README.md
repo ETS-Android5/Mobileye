@@ -6,6 +6,8 @@ This demo application works mono depth estimation in mobile phone with [fast-dep
 
 It gives vibration notification to user when some hazards like passing cars, motorcycles, even some man with close walk in their real life occurs.
 
+Demo Video:
+
 [![Demovideo](https://img.youtube.com/vi/elPlb0QWnkc/0.jpg)](https://www.youtube.com/watch?v=elPlb0QWnkc)
 
 ## Backgrounds
